@@ -10,7 +10,7 @@
             margin: 0;
             font-family: 'Courier New', Courier, monospace;
             color: #ffffff;
-            background: radial-gradient(circle, #0d0d0d, #000000);
+            background: radial-gradient(circle at top, #1a1a1a, #000000);
             overflow-x: hidden;
         }
         header.hero {
@@ -19,7 +19,7 @@
             justify-content: center;
             align-items: center;
             background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
-            background-blend-mode: overlay;
+            background-blend-mode: multiply;
             animation: fadeIn 2s ease-in-out;
         }
         @keyframes fadeIn {
@@ -30,12 +30,12 @@
             font-size: 6rem;
             margin: 0;
             color: #ff4500;
-            text-shadow: 0 0 10px rgba(255, 69, 0, 0.7);
+            text-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
             animation: pulse 3s infinite alternate;
         }
         @keyframes pulse {
-            from { text-shadow: 0 0 10px rgba(255, 69, 0, 0.7); }
-            to { text-shadow: 0 0 20px rgba(255, 69, 0, 1); }
+            from { text-shadow: 0 0 15px rgba(255, 69, 0, 0.8); }
+            to { text-shadow: 0 0 30px rgba(255, 69, 0, 1); }
         }
         p.subtitle {
             margin: 1rem 0;
@@ -62,15 +62,15 @@
             padding: 3rem 0;
         }
         section {
-            padding: 3rem;
+            padding: 4rem;
             text-align: center;
-            background-color: #111111;
+            background: rgba(17, 17, 17, 0.9);
             margin-bottom: 2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
         }
         section:nth-child(even) {
-            background-color: #1a1a1a;
+            background: rgba(26, 26, 26, 0.9);
         }
         ul {
             list-style: none;
@@ -95,11 +95,12 @@
             font-size: 2rem;
             border: 2px solid #ff4500;
             animation: fadeIn 2s ease-in-out;
+            border-radius: 15px;
         }
         .footer {
             background: linear-gradient(to bottom, #1a1a1a, #000000);
             text-align: center;
-            padding: 1rem 0;
+            padding: 2rem 0;
         }
         .footer p {
             font-size: 1rem;
@@ -107,6 +108,16 @@
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+        .animated-line {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ff4500, transparent);
+            animation: moveLine 2s infinite linear;
+        }
+        @keyframes moveLine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
     </style>
 </head>
@@ -123,6 +134,7 @@
         <section id="about" class="about">
             <div class="container">
                 <h2>About the Game</h2>
+                <div class="animated-line"></div>
                 <p>
                     Dive into a dystopian world where the lines between humanity and madness blur. "Project ZERØTH" immerses you in a gripping RPG experience where your every decision shapes the story.
                 </p>
@@ -132,6 +144,7 @@
         <section id="gameplay" class="gameplay">
             <div class="container">
                 <h2>Gameplay Mechanics</h2>
+                <div class="animated-line"></div>
                 <p>Explore an expansive open world teeming with mysteries, dangers, and opportunities. Your choices dictate alliances, rivalries, and the fate of the world itself.</p>
                 <ul>
                     <li>Immersive character progression with a deep skill tree.</li>
@@ -144,6 +157,7 @@
         <section id="world" class="world">
             <div class="container">
                 <h2>The World of ZERØTH</h2>
+                <div class="animated-line"></div>
                 <p>Step into a realm inspired by '50s noir and dystopian futures. Explore sprawling cities, desolate wastelands, and secretive underground factions in a world steeped in atmosphere.</p>
             </div>
         </section>
@@ -151,6 +165,7 @@
         <section id="features" class="features">
             <div class="container">
                 <h2>Key Features</h2>
+                <div class="animated-line"></div>
                 <ul>
                     <li>Non-linear storytelling driven by your actions.</li>
                     <li>Richly detailed environments with hidden lore.</li>
@@ -163,6 +178,7 @@
         <section id="contact" class="contact">
             <div class="container">
                 <h2>Stay Updated</h2>
+                <div class="animated-line"></div>
                 <p>Want to know more? Join our journey and be part of something unforgettable.</p>
                 <form action="#" method="post">
                     <input type="email" placeholder="Enter your email" required>
