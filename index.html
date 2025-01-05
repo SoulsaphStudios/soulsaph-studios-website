@@ -119,6 +119,40 @@
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
+        .blood-type {
+            color: #ff4500;
+            font-weight: bold;
+            animation: bloodDrop 2s infinite;
+        }
+        @keyframes bloodDrop {
+            0% { transform: translateY(-10px); opacity: 0.7; }
+            50% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-10px); opacity: 0.7; }
+        }
+        .hidden-easter-egg {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .hidden-easter-egg.active {
+            display: block;
+        }
+        .trigger-area {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -138,6 +172,7 @@
                 <p>
                     Dive into a dystopian world where the lines between humanity and madness blur. "Project ZERØTH" immerses you in a gripping RPG experience where your every decision shapes the story.
                 </p>
+                <p class="blood-type">Blood Type: AB</p>
             </div>
         </section>
 
@@ -186,6 +221,10 @@
                 </form>
             </div>
         </section>
+
+        <div class="hidden-easter-egg" id="easter-egg">
+            <p>You found a hidden secret! The fate of the world lies in your hands...</p>
+        </div>
     </main>
 
     <footer class="footer">
@@ -193,5 +232,17 @@
             <p>&copy; 2025 Project ZERØTH. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <div class="trigger-area" id="trigger"></div>
+
+    <script>
+        document.getElementById('trigger').addEventListener('mouseover', () => {
+            document.getElementById('easter-egg').classList.add('active');
+        });
+
+        document.getElementById('easter-egg').addEventListener('click', () => {
+            document.getElementById('easter-egg').classList.remove('active');
+        });
+    </script>
 </body>
 </html>
