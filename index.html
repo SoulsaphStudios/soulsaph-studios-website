@@ -80,10 +80,26 @@
             from { opacity: 0; transform: translateX(-20px); }
             to { opacity: 1; transform: translateX(0); }
         }
+        .interactive-map {
+            width: 100%;
+            height: 400px;
+            background: #000000 url('https://via.placeholder.com/800x400') center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            animation: fadeIn 2s ease-in-out;
+        }
         .footer {
             background: #000000;
             text-align: center;
             padding: 1rem 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -103,6 +119,24 @@
                 <p>
                     Step into a dark and immersive open-world RPG where every choice matters. Explore a world ravaged by a mysterious virus, uncover secrets, and forge your path in a universe filled with danger and intrigue. Project ZERØTH is a passion-driven creation from a team of dreamers, offering a story like no other.
                 </p>
+            </div>
+        </section>
+
+        <section id="gameplay" class="gameplay">
+            <div class="container">
+                <h2>Gameplay Mechanics</h2>
+                <p>Engage in an open-world environment with a non-linear narrative. Experience dynamic interactions with characters, factions, and the mysterious virus that reshapes humanity.</p>
+                <ul>
+                    <li>Character-driven storylines influenced by your choices.</li>
+                    <li>Intense combat and stealth mechanics tailored to your playstyle.</li>
+                    <li>Deep crafting systems to aid your survival in the world of ZERØTH.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="map" class="interactive-map">
+            <div class="container">
+                <p>Explore an intricate world filled with mysteries. Interactive map coming soon!</p>
             </div>
         </section>
 
@@ -132,7 +166,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Soulsaph Studios Copyright&copy; 2025. All Rights Reserved.</p>
+            <p>&copy; 2025 Project ZERØTH. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
